@@ -16,6 +16,7 @@ for j in range(1,3001,50):
     h4=soap.find_all('div',class_="inline-block ratings-metascore")
     h5=soap.find_all('p',class_='sort-num_votes-visible')
     if 'movien' not in lok:
+        # movien is name of movei
         lok['movien']=[]
     for i in h1:
         moviename=h1[h1.index(i)].find('h3').find('a').text.strip()
@@ -26,16 +27,19 @@ for j in range(1,3001,50):
         year=h2[h2.index(i)].text.strip()
         lok['year'].append(year)
     if 'rank' not in lok:
+    # rank is ranke of IMDB
         lok['rank']=[]
     for i in h3:
         rank=h3[h3.index(i)].text.strip()
         lok['rank'].append(float(rank))
     if 'metascore' not in lok:
+    # metascore is ranke of metascore 
         lok['metascore']=[]
     for i in h4 :
         metascore=h4[h4.index(i)].span.text.strip()
         lok['metascore'].append(int(metascore))
     if 'vote' not in lok:
+     # the number of votes for a movie
         lok['vote']=[]
     for i in h5:
         vote=h5[h5.index(i)].find_all('span')[1].text
