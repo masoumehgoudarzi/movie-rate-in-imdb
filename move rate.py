@@ -69,9 +69,8 @@ import json
 fname='list of movies.json'
 with open(fname,'w') as f:
     json.dump(lok,f)
+#https://github.com/masoumehgoudarzi/movie-rate-in-imdb.git
 
-
-# In[ ]:
 
 
 
